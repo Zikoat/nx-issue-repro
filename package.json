@@ -7,9 +7,9 @@
   "packageManager": "pnpm@8.15.8",
   "scripts": {
     "docker-build": "docker build -t company-api .",
-    "docker": "docker run --rm -it -p 80:4000 -p 22:2222 company-api",
-    "company-api:build": "nx build company-api"
-    ,"company-api:serve-production": "nx serve company-api-app --configuration=production"
+    "docker-serve": "docker run --rm -it -p 80:4000 -p 22:2222 company-api",
+    "build": "nx build company-api",
+    "serve": "nx serve company-api-app --configuration=production"
   },
   "devDependencies": {
     "@nx/esbuild": "^18.0.8",

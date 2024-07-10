@@ -14,6 +14,6 @@ RUN --mount=type=cache,target=${PNPM_HOME} \
   pnpm config set store-dir ${PNPM_HOME} && \
   pnpm install --frozen-lockfile --prefer-offline
 
-RUN pnpm run company-api:build
+RUN pnpm run build
 
-CMD [ "pnpm", "run", "company-api:serve-production" ]
+CMD [ "pnpm", "run", "serve" ]
