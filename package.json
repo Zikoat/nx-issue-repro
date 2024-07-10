@@ -1,0 +1,34 @@
+{
+  "name": "myorganisation",
+  "engines": {
+    "node": "20.15.0",
+    "pnpm": "8.15.8"
+  },
+  "packageManager": "pnpm@8.15.8",
+  "scripts": {
+    "docker-build": "docker build -t company-api .",
+    "docker": "docker run --rm -it -p 80:4000 -p 22:2222 company-api",
+    "company-api:build": "nx build company-api"
+    ,"company-api:serve-production": "nx serve company-api-app --configuration=production"
+  },
+  "devDependencies": {
+    "@nx/esbuild": "^18.0.8",
+    "@nx/eslint": "18.0.8",
+    "@nx/vite": "^18.0.8",
+    "@nx/jest": "^18.0.8",
+    "@swc/cli": "~0.1.62",
+    "esbuild": "0.20.2",
+    "nx": "18.0.8",
+    "nx-remotecache-azure": "^18.0.0",
+    "typescript": "^5.3.3",
+    "vite": "^5.2.11",
+    "vite-plugin-eslint": "^1.8.1",
+    "vite-plugin-swc-transform": "^1.0.1",
+    "vitest": "^1.6.0",
+    "vitest-preview": "latest"
+  },
+  "dependencies": {
+    "vite-plugin-graphql-loader": "^3.0.1",
+    "@types/node": "^20.10.5"
+  }
+}

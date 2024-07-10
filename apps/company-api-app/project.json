@@ -1,0 +1,45 @@
+{
+  "name": "company-api-app",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/company-api-app/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nx/esbuild:esbuild",
+      "options": {
+        "platform": "node",
+        "outputPath": "dist/apps/company-api-app",
+        "format": ["cjs"],
+        "bundle": false,
+        "main": "apps/company-api-app/src/server.ts",
+        "tsConfig": "apps/company-api-app/tsconfig.app.json",
+        "assets": ["apps/company-api-app/*.md"],
+        "generatePackageJson": true,
+        "esbuildOptions": {
+          "sourcemap": true,
+          "outExtension": {
+            ".js": ".js"
+          }
+        }
+      },
+      "configurations": {
+        "development": {},
+        "production": {
+          "esbuildOptions": {
+            "sourcemap": false,
+            "outExtension": {
+              ".js": ".js"
+            }
+          }
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nx/js:node",
+      "options": {
+        "buildTarget": "company-api-app:build"
+      }
+    }
+  },
+  "tags": []
+}
