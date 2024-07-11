@@ -10,10 +10,7 @@ RUN corepack enable
 
 COPY . .
 
-RUN --mount=type=cache,target=${PNPM_HOME} \
-  pnpm config set store-dir ${PNPM_HOME} && \
-  pnpm install --frozen-lockfile --prefer-offline
-
+RUN pnpm install --frozen-lockfile --prefer-offline
 RUN pnpm run build
 
 COPY entrypoint.sh /app/entrypoint.sh
