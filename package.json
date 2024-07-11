@@ -8,7 +8,7 @@
   "scripts": {
     "docker-build": "docker build -t company-api .",
     "docker-serve": "docker run --rm -it -p 80:4000 -p 22:2222 company-api",
-    "docker-debug": "docker run --rm -it --entrypoint /bin/bash -p 80:4000 -p 22:2222 --cpus='2' --memory='2000m' finexa-api",
+    "docker-debug": "docker run --rm -it --entrypoint /bin/bash -p 80:4000 -p 22:2222 --cpus='2' --memory='2000m' company-api",
     "build": "nx build company-api",
     "serve": "nx serve company-api-app --configuration=production"
   },
