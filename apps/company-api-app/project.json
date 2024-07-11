@@ -37,7 +37,8 @@
     "serve": {
       "executor": "@nx/js:node",
       "options": {
-        "buildTarget": "company-api-app:build"
+        "buildTarget": "company-api-app:build",
+        "watch": false
       }
     }
   },
